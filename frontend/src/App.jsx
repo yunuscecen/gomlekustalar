@@ -16,6 +16,7 @@ import AdminPagesPage from "./pages/admin/AdminPagesPage";
 import AdminMessageDetailPage from "./pages/admin/AdminMessageDetailPage";
 import AdminMessagesPage from "./pages/admin/AdminMessagesPage";
 import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
+import GalleryPage from "./pages/GalleryPage";
 import AdminPasswordPage from "./pages/admin/AdminPasswordPage";
 
 const App = () => {
@@ -43,15 +44,20 @@ const App = () => {
           element={<PublicPage slug="uretim" />}
         />
 
-        <Route
-          path="ihracat"
-          element={<PublicPage slug="ihracat" />}
-        />
+       <Route
+  path="ihracat"
+  element={<PublicPage slug="ihracat" />}
+/>
 
-        <Route
-          path="iletisim"
-          element={<PublicPage slug="iletisim" />}
-        />
+<Route
+  path="galeri"
+  element={<GalleryPage />}
+/>
+
+<Route
+  path="iletisim"
+  element={<PublicPage slug="iletisim" />}
+/>
       </Route>
 
       {/* Admin giriş */}

@@ -1,4 +1,8 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import {
   ArrowUpRight,
   Menu,
@@ -17,8 +21,49 @@ const Header = () => {
   const { settings, visibleNavigation } = useSite();
   const location = useLocation();
 
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] =
+    useState(false);
+
+  const [isScrolled, setIsScrolled] =
+    useState(false);
+
+  const headerNavigation = useMemo(() => {
+    const dynamicNavigation =
+      visibleNavigation.filter(
+        (item) => item.path !== "/galeri"
+      );
+
+    const galleryNavigationItem = {
+      label: "Galeri",
+      path: "/galeri",
+      isStatic: true,
+    };
+
+    const contactIndex =
+      dynamicNavigation.findIndex(
+        (item) => item.path === "/iletisim"
+      );
+
+    if (contactIndex === -1) {
+      return [
+        ...dynamicNavigation,
+        galleryNavigationItem,
+      ];
+    }
+
+    return [
+      ...dynamicNavigation.slice(
+        0,
+        contactIndex
+      ),
+
+      galleryNavigationItem,
+
+      ...dynamicNavigation.slice(
+        contactIndex
+      ),
+    ];
+  }, [visibleNavigation]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,12 +72,19 @@ const Header = () => {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, {
-      passive: true,
-    });
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      }
+    );
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
     };
   }, []);
 
@@ -41,7 +93,8 @@ const Header = () => {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = menuIsOpen ? "hidden" : "";
+    document.body.style.overflow =
+      menuIsOpen ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -51,8 +104,14 @@ const Header = () => {
   return (
     <header
       className={`site-header ${
-        isScrolled ? "site-header--scrolled" : ""
-      } ${menuIsOpen ? "site-header--menu-open" : ""}`}
+        isScrolled
+          ? "site-header--scrolled"
+          : ""
+      } ${
+        menuIsOpen
+          ? "site-header--menu-open"
+          : ""
+      }`}
     >
       <Container className="site-header__inner">
         <Link
@@ -60,7 +119,9 @@ const Header = () => {
           className="brand"
           aria-label={`${settings.brandName} anasayfa`}
         >
-          <span className="brand__mark">UG</span>
+          <span className="brand__mark">
+            UG
+          </span>
 
           <span className="brand__text">
             <strong>USTALAR</strong>
@@ -70,7 +131,9 @@ const Header = () => {
 
         <nav
           className={`main-navigation ${
-            menuIsOpen ? "main-navigation--open" : ""
+            menuIsOpen
+              ? "main-navigation--open"
+              : ""
           }`}
           aria-label="Ana menü"
         >
@@ -79,7 +142,9 @@ const Header = () => {
 
             <button
               type="button"
-              onClick={() => setMenuIsOpen(false)}
+              onClick={() =>
+                setMenuIsOpen(false)
+              }
               aria-label="Menüyü kapat"
             >
               <X size={24} />
@@ -87,28 +152,42 @@ const Header = () => {
           </div>
 
           <div className="main-navigation__links">
-            {visibleNavigation.map((navigationItem, index) => (
-              <NavLink
-                key={`${navigationItem.path}-${navigationItem.label}`}
-                to={navigationItem.path}
-                className={({ isActive }) =>
-                  `navigation-link ${
-                    isActive ? "navigation-link--active" : ""
-                  }`
-                }
-              >
-                <span className="navigation-link__number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+            {headerNavigation.map(
+              (
+                navigationItem,
+                index
+              ) => (
+                <NavLink
+                  key={`${navigationItem.path}-${navigationItem.label}`}
+                  to={navigationItem.path}
+                  className={({
+                    isActive,
+                  }) =>
+                    `navigation-link ${
+                      isActive
+                        ? "navigation-link--active"
+                        : ""
+                    }`
+                  }
+                >
+                  <span className="navigation-link__number">
+                    {String(
+                      index + 1
+                    ).padStart(2, "0")}
+                  </span>
 
-                <span>{navigationItem.label}</span>
-              </NavLink>
-            ))}
+                  <span>
+                    {navigationItem.label}
+                  </span>
+                </NavLink>
+              )
+            )}
           </div>
 
           <div className="main-navigation__mobile-footer">
             <p>
-              Koleksiyon ve üretim ihtiyaçlarınız için bizimle
+              Koleksiyon ve üretim
+              ihtiyaçlarınız için bizimle
               iletişime geçin.
             </p>
 
@@ -134,7 +213,9 @@ const Header = () => {
           <button
             type="button"
             className="menu-toggle"
-            onClick={() => setMenuIsOpen(true)}
+            onClick={() =>
+              setMenuIsOpen(true)
+            }
             aria-label="Menüyü aç"
             aria-expanded={menuIsOpen}
           >

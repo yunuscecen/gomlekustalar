@@ -23,7 +23,7 @@ const pages = [
       title: "Gömleğin her aşamasında ustalık.",
       description:
         "Tasarımdan üretime, kalite kontrolden paketlemeye kadar markalara özel gömlek üretimi.",
-      image: "/images/home/home-hero.webp",
+      image: "/hero.jpg",
       imageAlt: "Ustalar Gömlek üretim ve gömlek detayları",
       primaryButtonLabel: "Üretim Gücümüz",
       primaryButtonLink: "/uretim",
@@ -63,7 +63,7 @@ const pages = [
             title: "Tasarım",
             description:
               "Marka kimliğine, sezona ve hedef kitleye uygun ürün geliştirme çalışmaları.",
-            image: "/images/home/service-design.webp",
+            image: "/tasarim.jpg",
             linkLabel: "Tasarımı İnceleyin",
             link: "/tasarim",
           },
@@ -71,7 +71,7 @@ const pages = [
             title: "Üretim",
             description:
               "Kesimden dikime, kalite kontrolden paketlemeye kadar kontrollü üretim.",
-            image: "/images/home/service-production.webp",
+            image: "/uretim.jpg",
             linkLabel: "Üretimi İnceleyin",
             link: "/uretim",
           },
@@ -79,7 +79,7 @@ const pages = [
             title: "İhracat",
             description:
               "Avrupa ülkelerindeki markalara düzenli iletişim ve planlı teslimat yaklaşımı.",
-            image: "/images/home/service-export.webp",
+            image: "/ihracat.jpg",
             linkLabel: "İhracatı İnceleyin",
             link: "/ihracat",
           },
@@ -195,7 +195,7 @@ const pages = [
       title: "Güvene dayalı üretim ortaklığı.",
       description:
         "Kaliteli işçilik, planlı üretim ve uzun vadeli iş birlikleri.",
-      image: "/images/pages/about-hero.webp",
+      image: "/title.jpg",
       imageAlt: "Ustalar Gömlek ekibi ve üretim detayları",
       overlayOpacity: 0.55,
     },
@@ -213,7 +213,7 @@ const pages = [
           "Tasarımdan kesime, dikimden kalite kontrole ve paketlemeye kadar tüm üretim süreçlerini titizlikle yönetiyoruz. Esnek üretim yapımız sayesinde markalarımızın ihtiyaçlarına özel çözümler sunuyoruz.",
           "Müşterilerimiz için yalnızca bir üretici değil, güvenilir ve uzun vadeli bir iş ortağı olmayı hedefliyoruz. Kaliteli işçilik, zamanında teslimat ve müşteri memnuniyetini ön planda tutuyoruz.",
         ],
-        image: "/images/pages/about-story.webp",
+        image: "/hakkimizda.jpg",
         imageAlt: "Gömlek üretiminde işçilik detayı",
         imagePosition: "right",
         order: 1,
@@ -298,7 +298,7 @@ const pages = [
       title: "Fikirleri üretilebilir ürünlere dönüştürüyoruz.",
       description:
         "Marka kimliği, kullanım amacı ve koleksiyon ihtiyaçlarına özel ürün geliştirme.",
-      image: "/images/pages/design-hero.webp",
+      image: "/title.jpg",
       imageAlt: "Gömlek tasarım ve ürün geliştirme çalışmaları",
       overlayOpacity: 0.48,
     },
@@ -313,7 +313,7 @@ const pages = [
           "Model detaylarından kumaş seçimine, renk alternatiflerinden aksesuar kullanımına kadar her aşamayı müşteri beklentileriyle birlikte değerlendiriyoruz. Tasarım sürecini üretilebilirlik, kullanım konforu ve kalite standartlarıyla birlikte ele alıyoruz.",
           "Hazırlanan tasarımlar numune süreciyle test edilerek kalıp, ölçü, dikiş ve malzeme detayları üretim öncesinde netleştirilir.",
         ],
-        image: "/images/pages/design-detail.webp",
+        image: "/tasarim.jpg",
         imageAlt: "Gömlek kalıbı, kumaş ve tasarım detayları",
         imagePosition: "left",
         order: 1,
@@ -373,7 +373,7 @@ const pages = [
       title: "Her aşamada kontrollü üretim.",
       description:
         "Aylık 20.000 adet kapasiteyle planlı, esnek ve özenli gömlek üretimi.",
-      image: "/images/pages/production-hero.webp",
+      image: "/title.jpg",
       imageAlt: "Ustalar Gömlek üretim alanı",
       overlayOpacity: 0.5,
     },
@@ -388,7 +388,7 @@ const pages = [
           "Her proje; ürün tipi, kumaş özelliği, adet, teslimat planı ve kalite beklentileri dikkate alınarak ayrı şekilde değerlendirilir.",
           "Esnek üretim yapımız sayesinde spor, klasik, örme, overshirt ve casual ürün gruplarında markaların farklı koleksiyon ihtiyaçlarına uygun çözümler sunuyoruz.",
         ],
-        image: "/images/pages/production-detail.webp",
+        image: "/uretim.jpg",
         imageAlt: "Gömlek dikim ve üretim süreci",
         imagePosition: "right",
         order: 1,
@@ -464,7 +464,7 @@ const pages = [
       title: "Sınırların ötesinde güvenilir iş ortaklığı.",
       description:
         "Avrupa ülkelerindeki markalar için planlı üretim ve düzenli iletişim.",
-      image: "/images/pages/export-hero.webp",
+      image: "/title.jpg",
       imageAlt: "Gömlek ihracatı ve sevkiyat hazırlığı",
       overlayOpacity: 0.52,
     },
@@ -479,7 +479,7 @@ const pages = [
           "İhracat projelerinde yalnızca ürünün üretimine değil; doğru planlamaya, düzenli iletişime, termin takibine, kalite kontrolüne ve sevkiyat hazırlığına da önem veriyoruz.",
           "Amacımız, markaların koleksiyonlarını güvenle hayata geçirebilecekleri uzun vadeli bir üretim iş ortaklığı oluşturmaktır.",
         ],
-        image: "/images/pages/export-detail.webp",
+        image: "/ihracat.jpg",
         imageAlt: "İhracata hazır paketlenmiş gömlekler",
         imagePosition: "left",
         order: 1,
@@ -539,33 +539,21 @@ const pages = [
       title: "Yeni projeleri birlikte konuşalım.",
       description:
         "Ürün, koleksiyon ve üretim talepleriniz için ekibimizle iletişime geçin.",
-      image: "/images/pages/contact-hero.webp",
+      image: "/title.jpg",
       imageAlt: "Ustalar Gömlek iletişim",
       overlayOpacity: 0.58,
     },
-    sections: [
-      {
-        key: "contact-intro",
-        type: "text",
-        eyebrow: "BİZE ULAŞIN",
-        title: "Üretim ihtiyaçlarınızı değerlendirelim",
-        paragraphs: [
-          "Ürün grubunuz, tahmini adetleriniz, kumaş tercihleriniz ve teslimat planınız hakkında bizimle iletişime geçebilirsiniz.",
-          "Ekibimiz talebinizi inceleyerek sizinle en kısa sürede iletişime geçecektir.",
-        ],
-        order: 1,
-        isVisible: true,
-      },
-      {
-        key: "contact-form",
-        type: "contactForm",
-        title: "Projeniz hakkında bilgi verin",
-        description:
-          "Formu doldurarak koleksiyon ve üretim ihtiyaçlarınızı bize iletebilirsiniz.",
-        order: 2,
-        isVisible: true,
-      },
-    ],
+   sections: [
+  {
+    key: "contact-location",
+    type: "contactForm",
+    eyebrow: "İLETİŞİM",
+    title: "",
+    description: "",
+    order: 1,
+    isVisible: true,
+  },
+],
     seo: {
       title: "İletişim | Ustalar Gömlek",
       description:
@@ -621,7 +609,7 @@ const siteSettings = {
     address: "",
     phone: "",
     secondaryPhone: "",
-    email: "",
+    email: "info@ustalargomlek.com",
     mapLink: "",
     mapEmbedUrl: "",
     workingHours: "",

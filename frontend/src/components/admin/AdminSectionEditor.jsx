@@ -17,7 +17,7 @@ const sectionTypeLabels = {
   steps: "Üretim Adımları",
   stats: "İstatistikler",
   cta: "Çağrı Alanı",
-  contactForm: "İletişim Formu",
+  contactForm: "Harita ve İletişim Bilgileri",
 };
 
 const createEmptyItem = (sectionType) => {

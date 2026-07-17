@@ -126,26 +126,48 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="site-footer__bottom">
-          <p>
-            © {new Date().getFullYear()}{" "}
-            {footer.copyright ||
-              "Ustalar Gömlek. Tüm hakları saklıdır."}
-          </p>
+     
+                <div className="site-footer__bottom">
+  <p>
+    © {new Date().getFullYear()}{" "}
+    {footer.copyright ||
+      "Ustalar Gömlek. Tüm hakları saklıdır."}
+  </p>
+ <img
+      src="/index.png"
+      alt="Digital is Moon"
+      className="site-footer__agency-logo"
+      loading="lazy"
+    />
+  <a
+    href="https://digitalismoon.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="site-footer__agency"
+    aria-label="Digital is Moon web sitesini yeni sekmede aç"
+  >
+   
 
-          <button
-            type="button"
-            onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
-          >
-            Yukarı Dön
-            <ArrowUpRight size={15} />
-          </button>
-        </div>
+    <span className="site-footer__agency-text">
+      <span>Software Agency :</span>
+      <strong>Digital is Moon</strong>
+    </span>
+  </a>
+
+  <button
+    type="button"
+    onClick={() =>
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      })
+    }
+  >
+    Yukarı Dön
+    <ArrowUpRight size={15} />
+  </button>
+</div>
+
       </Container>
     </footer>
   );

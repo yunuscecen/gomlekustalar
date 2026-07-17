@@ -10,12 +10,13 @@ import NotFoundPage from "./pages/NotFoundPage";
 import PublicPage from "./pages/PublicPage";
 import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
 import AdminLoginPage from "./pages/admin/AdminLoginPage";
-import AdminPlaceholderPage from "./pages/admin/AdminPlaceholderPage";
+// import AdminPlaceholderPage from "./pages/admin/AdminPlaceholderPage";
 import AdminPageEditorPage from "./pages/admin/AdminPageEditorPage";
 import AdminPagesPage from "./pages/admin/AdminPagesPage";
 import AdminMessageDetailPage from "./pages/admin/AdminMessageDetailPage";
 import AdminMessagesPage from "./pages/admin/AdminMessagesPage";
-
+import AdminSettingsPage from "./pages/admin/AdminSettingsPage";
+import AdminPasswordPage from "./pages/admin/AdminPasswordPage";
 
 const App = () => {
   return (
@@ -80,16 +81,10 @@ const App = () => {
   element={<AdminPageEditorPage />}
 />
 
-          <Route
-            path="site-ayarlari"
-            element={
-              <AdminPlaceholderPage
-                eyebrow="GENEL AYARLAR"
-                title="Site Ayarları"
-                description="Menü, iletişim ve footer bilgilerini yönetin."
-              />
-            }
-          />
+         <Route
+  path="site-ayarlari"
+  element={<AdminSettingsPage />}
+/>
 
           <Route
   path="mesajlar"
@@ -101,16 +96,10 @@ const App = () => {
   element={<AdminMessageDetailPage />}
 />
 
-          <Route
-            path="sifre"
-            element={
-              <AdminPlaceholderPage
-                eyebrow="HESAP GÜVENLİĞİ"
-                title="Şifre Değiştir"
-                description="Yönetici hesabınızın şifresini güncelleyin."
-              />
-            }
-          />
+         <Route
+  path="sifre"
+  element={<AdminPasswordPage />}
+/>
         </Route>
       </Route>
 

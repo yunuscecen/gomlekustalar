@@ -1,0 +1,149 @@
+import { useEffect, useState } from "react";
+import {
+  ArrowUpRight,
+  Menu,
+  X,
+} from "lucide-react";
+import {
+  Link,
+  NavLink,
+  useLocation,
+} from "react-router";
+
+import { useSite } from "../../context/SiteContext";
+import Container from "../common/Container";
+
+const Header = () => {
+  const { settings, visibleNavigation } = useSite();
+  const location = useLocation();
+
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    setMenuIsOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuIsOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuIsOpen]);
+
+  return (
+    <header
+      className={`site-header ${
+        isScrolled ? "site-header--scrolled" : ""
+      } ${menuIsOpen ? "site-header--menu-open" : ""}`}
+    >
+      <Container className="site-header__inner">
+        <Link
+          to="/"
+          className="brand"
+          aria-label={`${settings.brandName} anasayfa`}
+        >
+          <span className="brand__mark">UG</span>
+
+          <span className="brand__text">
+            <strong>USTALAR</strong>
+            <span>GÖMLEK</span>
+          </span>
+        </Link>
+
+        <nav
+          className={`main-navigation ${
+            menuIsOpen ? "main-navigation--open" : ""
+          }`}
+          aria-label="Ana menü"
+        >
+          <div className="main-navigation__mobile-heading">
+            <span>MENÜ</span>
+
+            <button
+              type="button"
+              onClick={() => setMenuIsOpen(false)}
+              aria-label="Menüyü kapat"
+            >
+              <X size={24} />
+            </button>
+          </div>
+
+          <div className="main-navigation__links">
+            {visibleNavigation.map((navigationItem, index) => (
+              <NavLink
+                key={`${navigationItem.path}-${navigationItem.label}`}
+                to={navigationItem.path}
+                className={({ isActive }) =>
+                  `navigation-link ${
+                    isActive ? "navigation-link--active" : ""
+                  }`
+                }
+              >
+                <span className="navigation-link__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span>{navigationItem.label}</span>
+              </NavLink>
+            ))}
+          </div>
+
+          <div className="main-navigation__mobile-footer">
+            <p>
+              Koleksiyon ve üretim ihtiyaçlarınız için bizimle
+              iletişime geçin.
+            </p>
+
+            <Link
+              to="/iletisim"
+              className="button button--light"
+            >
+              İletişime Geçin
+              <ArrowUpRight size={17} />
+            </Link>
+          </div>
+        </nav>
+
+        <div className="site-header__actions">
+          <Link
+            to="/iletisim"
+            className="header-contact-link"
+          >
+            İletişim
+            <ArrowUpRight size={16} />
+          </Link>
+
+          <button
+            type="button"
+            className="menu-toggle"
+            onClick={() => setMenuIsOpen(true)}
+            aria-label="Menüyü aç"
+            aria-expanded={menuIsOpen}
+          >
+            <Menu size={23} />
+          </button>
+        </div>
+      </Container>
+    </header>
+  );
+};
+
+export default Header;

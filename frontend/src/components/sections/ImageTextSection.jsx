@@ -116,11 +116,7 @@ const ImageTextSection = ({ section }) => {
                 </>
               )}
 
-              <span className="media-frame__index">
-                {String(
-                  section.order || 1
-                ).padStart(2, "0")}
-              </span>
+            
             </div>
           </div>
         </div>

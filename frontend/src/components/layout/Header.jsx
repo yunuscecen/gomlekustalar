@@ -170,11 +170,11 @@ const Header = () => {
                     }`
                   }
                 >
-                  <span className="navigation-link__number">
+                  {/* <span className="navigation-link__number">
                     {String(
                       index + 1
                     ).padStart(2, "0")}
-                  </span>
+                  </span> */}
 
                   <span>
                     {navigationItem.label}
@@ -202,13 +202,7 @@ const Header = () => {
         </nav>
 
         <div className="site-header__actions">
-          <Link
-            to="/iletisim"
-            className="header-contact-link"
-          >
-            İletişim
-            <ArrowUpRight size={16} />
-          </Link>
+     
 
           <button
             type="button"

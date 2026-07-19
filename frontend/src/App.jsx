@@ -48,11 +48,11 @@ const App = () => {
   path="ihracat"
   element={<PublicPage slug="ihracat" />}
 />
-
+{/* 
 <Route
   path="galeri"
   element={<GalleryPage />}
-/>
+/> */}
 
 <Route
   path="iletisim"

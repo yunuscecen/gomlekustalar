@@ -33,11 +33,11 @@ const Header = () => {
         (item) => item.path !== "/galeri"
       );
 
-    const galleryNavigationItem = {
-      label: "Galeri",
-      path: "/galeri",
-      isStatic: true,
-    };
+    // const galleryNavigationItem = {
+    //   label: "Galeri",
+    //   path: "/galeri",
+    //   isStatic: true,
+    // };
 
     const contactIndex =
       dynamicNavigation.findIndex(
@@ -47,7 +47,7 @@ const Header = () => {
     if (contactIndex === -1) {
       return [
         ...dynamicNavigation,
-        galleryNavigationItem,
+        // galleryNavigationItem,
       ];
     }
 
@@ -57,7 +57,7 @@ const Header = () => {
         contactIndex
       ),
 
-      galleryNavigationItem,
+      // galleryNavigationItem,
 
       ...dynamicNavigation.slice(
         contactIndex

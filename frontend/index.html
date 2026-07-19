@@ -15,5 +15,26 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <div class="gtranslate_wrapper"></div>
+
+<script>
+  window.gtranslateSettings = {
+    default_language: "tr",
+    native_language_names: true,
+    detect_browser_language: false,
+    url_structure: "none",
+    languages: ["tr", "en", "de", "ru", "ar"],
+    wrapper_selector: ".gtranslate_wrapper",
+    switcher_horizontal_position: "right",
+    switcher_vertical_position: "bottom",
+    float_switcher_open_direction: "top",
+    flag_style: "2d"
+  };
+</script>
+
+<script
+  src="https://cdn.gtranslate.net/widgets/latest/float.js"
+  defer
+></script>
   </body>
 </html>

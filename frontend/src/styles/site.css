@@ -618,6 +618,7 @@
 }
 
 .content-card__number {
+  display: none!important;
   margin-bottom: auto;
   color: var(--color-stone);
   font-size: 10px;
@@ -734,6 +735,7 @@
 
 .process-step__top {
   display: flex;
+  display: none!important;
   align-items: center;
   gap: 16px;
   color: #777166;

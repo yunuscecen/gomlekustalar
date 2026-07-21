@@ -24,11 +24,10 @@ const Footer = () => {
               to="/"
               className="brand brand--footer"
             >
-              <span className="brand__mark">UG</span>
+              
 
               <span className="brand__text">
-                <strong>USTALAR</strong>
-                <span>GÖMLEK</span>
+                <strong>USTALAR GÖMLEK</strong>
               </span>
             </Link>
 

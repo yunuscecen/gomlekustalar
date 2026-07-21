@@ -119,13 +119,10 @@ const Header = () => {
           className="brand"
           aria-label={`${settings.brandName} anasayfa`}
         >
-          <span className="brand__mark">
-            UG
-          </span>
-
+         
           <span className="brand__text">
-            <strong>USTALAR</strong>
-            <span>GÖMLEK</span>
+            <strong>USTALAR GÖMLEK</strong>
+            
           </span>
         </Link>
 

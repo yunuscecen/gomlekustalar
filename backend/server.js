@@ -132,7 +132,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/admin/pages", adminPageRoutes);
 app.use("/api/admin/settings", adminSettingsRoutes);
 app.use("/api/admin/messages", adminMessageRoutes);
-
+app.get('/ping', (req, res) => {
+  res.status(200).send('Sunucu ayakta!');
+});
 /*
   Route ve genel hata yönetimi her zaman en sonda olmalı.
 */

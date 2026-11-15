@@ -139,17 +139,17 @@ const Footer = () => {
       loading="lazy"
     />
   <a
-    href="https://digitalismoon.com"
+    href="himalayayazilim.com"
     target="_blank"
     rel="noopener noreferrer"
     className="site-footer__agency"
-    aria-label="Digital is Moon web sitesini yeni sekmede aç"
+    aria-label="Himalaya internet sitesi ayrı bir pencere veya sekmede açılır"
   >
    
 
     <span className="site-footer__agency-text">
       <span>Software Agency :</span>
-      <strong>Digital is Moon</strong>
+      <strong>Himalaya Yazılım</strong>
     </span>
   </a>
 

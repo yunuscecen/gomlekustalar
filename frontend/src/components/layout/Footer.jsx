@@ -139,7 +139,7 @@ const Footer = () => {
       loading="lazy"
     />
   <a
-    href="himalayayazilim.com"
+    href="https://himalayayazilim.com/"
     target="_blank"
     rel="noopener noreferrer"
     className="site-footer__agency"
